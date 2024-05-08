@@ -20,7 +20,7 @@ server.use((req, res, next) => {
 
  server.use(express.json());
  server.use("/rickandmorty", router);
-conn.sync({force: true}).then(() => {
+conn.sync({force: false}).then(() => {
     server.listen(PORT, "0.0.0.0", () => {
         console.log(`Server run in port: ${PORT}`)
     })
